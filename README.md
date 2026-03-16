@@ -93,11 +93,22 @@ PDF / Image / Video / URL(s)
 
 ---
 
+## Live Demo & AWS Credentials
+
+**Live:** [https://amiontrack.onrender.com](https://amiontrack.onrender.com)
+
+This project uses **Amazon Nova** via AWS Bedrock. Since the app runs on AWS Academy temporary credentials, live Bedrock access may expire between sessions. If the AI features are unavailable, the app automatically falls back to **demo mode** — all agent flows, streaming, and UI interactions remain fully functional with deterministic mock responses.
+
+> To run with live Nova: set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN` in the environment. Academy credentials rotate every ~4 hours.
+
+---
+
 ## Quick Start
 
 ```bash
 export AWS_ACCESS_KEY_ID=your_key
 export AWS_SECRET_ACCESS_KEY=your_secret
+export AWS_SESSION_TOKEN=your_token   # required for AWS Academy
 
 docker compose up --build
 ```
