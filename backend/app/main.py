@@ -1,3 +1,4 @@
+import os
 import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
@@ -32,9 +33,13 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+_default_origins = ["http://localhost:5173", "http://localhost:3000"]
+_extra = os.getenv("ALLOWED_ORIGINS", "")
+_origins = _default_origins + [o.strip() for o in _extra.split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

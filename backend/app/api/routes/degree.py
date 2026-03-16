@@ -49,7 +49,7 @@ async def get_degree(
     degree = result.scalar_one_or_none()
     if not degree:
         logger.warning(f"Degree endpoint: session={session_id} not found")
-        return {"error": "Session not found"}
+        raise HTTPException(status_code=404, detail="Session not found")
 
     logger.info(f"Degree endpoint: session={session_id} status={degree.status} has_json={bool(degree.parsed_json)}")
 
@@ -163,7 +163,7 @@ async def explain_course(
         )
     degree = result.scalar_one_or_none()
     if not degree or not degree.parsed_json:
-        return {"error": "No parsed degree found"}
+        raise HTTPException(status_code=404, detail="No parsed degree found")
 
     degree_data = json.loads(degree.parsed_json)
     degree_req = DegreeRequirement.model_validate(degree_data)
@@ -186,7 +186,7 @@ async def explain_course(
             course = c
             break
     if not course:
-        return {"error": f"Course {request.course_code} not found"}
+        raise HTTPException(status_code=404, detail=f"Course {request.course_code} not found")
 
     # Find courses that depend on this course
     dependents = [c.code for c in degree_req.courses if request.course_code in c.prerequisites]
@@ -344,7 +344,7 @@ async def find_similar_courses(
         )
     degree = result.scalar_one_or_none()
     if not degree or not degree.parsed_json:
-        return {"error": "No parsed degree found"}
+        raise HTTPException(status_code=404, detail="No parsed degree found")
 
     degree_data = json.loads(degree.parsed_json)
     degree_req = DegreeRequirement.model_validate(degree_data)
@@ -353,7 +353,7 @@ async def find_similar_courses(
     course_map = {c.code: c for c in degree_req.courses}
     target = course_map.get(request.course_code)
     if not target:
-        return {"error": f"Course {request.course_code} not found"}
+        raise HTTPException(status_code=404, detail=f"Course {request.course_code} not found")
 
     # Use precomputed embeddings if available, otherwise compute on the fly
     cached_embeddings = None
@@ -413,7 +413,7 @@ async def get_impact_report(
         )
     degree = result.scalar_one_or_none()
     if not degree or not degree.parsed_json:
-        return {"error": "No parsed degree found"}
+        raise HTTPException(status_code=404, detail="No parsed degree found")
 
     degree_data = json.loads(degree.parsed_json)
     degree_req = DegreeRequirement.model_validate(degree_data)
@@ -501,7 +501,7 @@ async def check_policies(
         )
     degree = result.scalar_one_or_none()
     if not degree or not degree.parsed_json:
-        return {"error": "No parsed degree found"}
+        raise HTTPException(status_code=404, detail="No parsed degree found")
 
     degree_data = json.loads(degree.parsed_json)
     degree_req = DegreeRequirement.model_validate(degree_data)
@@ -568,7 +568,7 @@ async def export_advising_summary(
         )
     degree = result.scalar_one_or_none()
     if not degree or not degree.parsed_json:
-        return {"error": "No parsed degree found"}
+        raise HTTPException(status_code=404, detail="No parsed degree found")
 
     degree_data = json.loads(degree.parsed_json)
     degree_req = DegreeRequirement.model_validate(degree_data)

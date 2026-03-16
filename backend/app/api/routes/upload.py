@@ -121,7 +121,7 @@ async def parse_degree_stream(
     )
     degree = result.scalar_one_or_none()
     if not degree:
-        return {"error": "Session not found"}
+        raise HTTPException(status_code=404, detail="Session not found")
 
     # Capture immutable values before the DI session closes
     degree_id = degree.id
@@ -254,18 +254,18 @@ async def parse_url_stream(
     )
     degree = result.scalar_one_or_none()
     if not degree:
-        return {"error": "Session not found"}
+        raise HTTPException(status_code=404, detail="Session not found")
 
     # Capture values before the DI session closes
     degree_id = degree.id
     urls_json = degree.raw_pdf_path
     if not urls_json:
-        return {"error": "No URLs found for this session"}
+        raise HTTPException(status_code=404, detail="No URLs found for this session")
 
     try:
         urls = json.loads(urls_json)
     except json.JSONDecodeError:
-        return {"error": "Invalid URL data"}
+        raise HTTPException(status_code=400, detail="Invalid URL data")
 
     degree.status = "parsing"
     await db.commit()

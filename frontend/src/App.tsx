@@ -245,6 +245,9 @@ function AppContent() {
           }));
         },
       );
+      if (!explanation) {
+        throw new Error('Empty explanation returned');
+      }
       setExplanationCache((prev) => ({
         ...prev,
         [courseCode]: { text: explanation, isError: false },
