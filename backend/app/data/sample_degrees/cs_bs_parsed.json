@@ -1,0 +1,305 @@
+{
+  "degree_name": "Bachelor of Science in Computer Science",
+  "institution": "State University",
+  "total_credits_required": 120,
+  "max_credits_per_semester": 18,
+  "courses": [
+    {
+      "code": "CS 101",
+      "name": "Introduction to Computer Science",
+      "credits": 3,
+      "prerequisites": [],
+      "corequisites": [],
+      "category": "Core",
+      "typical_semester": 1,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "CS 102",
+      "name": "Data Structures",
+      "credits": 3,
+      "prerequisites": ["CS 101"],
+      "corequisites": [],
+      "category": "Core",
+      "typical_semester": 2,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "CS 201",
+      "name": "Algorithms",
+      "credits": 3,
+      "prerequisites": ["CS 102", "MATH 201"],
+      "corequisites": [],
+      "category": "Core",
+      "typical_semester": 3,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "CS 202",
+      "name": "Computer Organization",
+      "credits": 3,
+      "prerequisites": ["CS 102"],
+      "corequisites": [],
+      "category": "Core",
+      "typical_semester": 3,
+      "is_required": true,
+      "available_semesters": ["fall"]
+    },
+    {
+      "code": "CS 301",
+      "name": "Operating Systems",
+      "credits": 3,
+      "prerequisites": ["CS 201", "CS 202"],
+      "corequisites": [],
+      "category": "Core",
+      "typical_semester": 5,
+      "is_required": true,
+      "available_semesters": ["fall"]
+    },
+    {
+      "code": "CS 302",
+      "name": "Database Systems",
+      "credits": 3,
+      "prerequisites": ["CS 201"],
+      "corequisites": [],
+      "category": "Core",
+      "typical_semester": 5,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "CS 303",
+      "name": "Software Engineering",
+      "credits": 3,
+      "prerequisites": ["CS 201"],
+      "corequisites": [],
+      "category": "Core",
+      "typical_semester": 5,
+      "is_required": true,
+      "available_semesters": ["spring"]
+    },
+    {
+      "code": "CS 310",
+      "name": "Computer Networks",
+      "credits": 3,
+      "prerequisites": ["CS 202"],
+      "corequisites": [],
+      "category": "Core",
+      "typical_semester": 4,
+      "is_required": true,
+      "available_semesters": ["spring"]
+    },
+    {
+      "code": "CS 401",
+      "name": "Machine Learning",
+      "credits": 3,
+      "prerequisites": ["CS 201", "MATH 301"],
+      "corequisites": [],
+      "category": "Major Elective",
+      "typical_semester": 6,
+      "is_required": false,
+      "available_semesters": ["fall"]
+    },
+    {
+      "code": "CS 402",
+      "name": "Computer Security",
+      "credits": 3,
+      "prerequisites": ["CS 301", "CS 310"],
+      "corequisites": [],
+      "category": "Major Elective",
+      "typical_semester": 7,
+      "is_required": false,
+      "available_semesters": ["spring"]
+    },
+    {
+      "code": "CS 410",
+      "name": "Distributed Systems",
+      "credits": 3,
+      "prerequisites": ["CS 301", "CS 310"],
+      "corequisites": [],
+      "category": "Major Elective",
+      "typical_semester": 7,
+      "is_required": false,
+      "available_semesters": ["fall"]
+    },
+    {
+      "code": "CS 420",
+      "name": "Compiler Design",
+      "credits": 3,
+      "prerequisites": ["CS 201", "CS 202"],
+      "corequisites": [],
+      "category": "Major Elective",
+      "typical_semester": 6,
+      "is_required": false,
+      "available_semesters": ["spring"]
+    },
+    {
+      "code": "CS 490",
+      "name": "Senior Capstone Project",
+      "credits": 3,
+      "prerequisites": ["CS 301", "CS 302", "CS 303"],
+      "corequisites": [],
+      "category": "Core",
+      "typical_semester": 8,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "MATH 101",
+      "name": "Calculus I",
+      "credits": 4,
+      "prerequisites": [],
+      "corequisites": [],
+      "category": "Math/Science",
+      "typical_semester": 1,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "MATH 102",
+      "name": "Calculus II",
+      "credits": 4,
+      "prerequisites": ["MATH 101"],
+      "corequisites": [],
+      "category": "Math/Science",
+      "typical_semester": 2,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "MATH 201",
+      "name": "Discrete Mathematics",
+      "credits": 3,
+      "prerequisites": ["MATH 101"],
+      "corequisites": [],
+      "category": "Math/Science",
+      "typical_semester": 2,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "MATH 301",
+      "name": "Linear Algebra",
+      "credits": 3,
+      "prerequisites": ["MATH 102"],
+      "corequisites": [],
+      "category": "Math/Science",
+      "typical_semester": 3,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "MATH 302",
+      "name": "Probability & Statistics",
+      "credits": 3,
+      "prerequisites": ["MATH 102"],
+      "corequisites": [],
+      "category": "Math/Science",
+      "typical_semester": 4,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "PHYS 101",
+      "name": "Physics I",
+      "credits": 4,
+      "prerequisites": ["MATH 101"],
+      "corequisites": [],
+      "category": "Math/Science",
+      "typical_semester": 2,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "ENG 101",
+      "name": "English Composition",
+      "credits": 3,
+      "prerequisites": [],
+      "corequisites": [],
+      "category": "General Education",
+      "typical_semester": 1,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "ENG 201",
+      "name": "Technical Writing",
+      "credits": 3,
+      "prerequisites": ["ENG 101"],
+      "corequisites": [],
+      "category": "General Education",
+      "typical_semester": 4,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "GEN 101",
+      "name": "Introduction to Psychology",
+      "credits": 3,
+      "prerequisites": [],
+      "corequisites": [],
+      "category": "General Education",
+      "typical_semester": 1,
+      "is_required": false,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "GEN 102",
+      "name": "Principles of Economics",
+      "credits": 3,
+      "prerequisites": [],
+      "corequisites": [],
+      "category": "General Education",
+      "typical_semester": 3,
+      "is_required": false,
+      "available_semesters": ["fall", "spring"]
+    },
+    {
+      "code": "GEN 201",
+      "name": "Ethics in Technology",
+      "credits": 3,
+      "prerequisites": [],
+      "corequisites": [],
+      "category": "General Education",
+      "typical_semester": 6,
+      "is_required": true,
+      "available_semesters": ["fall", "spring"]
+    }
+  ],
+  "categories": [
+    {
+      "name": "Core",
+      "min_credits": 30,
+      "min_courses": 10,
+      "courses": ["CS 101", "CS 102", "CS 201", "CS 202", "CS 301", "CS 302", "CS 303", "CS 310", "CS 490"]
+    },
+    {
+      "name": "Math/Science",
+      "min_credits": 21,
+      "min_courses": 6,
+      "courses": ["MATH 101", "MATH 102", "MATH 201", "MATH 301", "MATH 302", "PHYS 101"]
+    },
+    {
+      "name": "General Education",
+      "min_credits": 15,
+      "min_courses": 5,
+      "courses": ["ENG 101", "ENG 201", "GEN 101", "GEN 102", "GEN 201"]
+    },
+    {
+      "name": "Major Elective",
+      "min_credits": 9,
+      "min_courses": 3,
+      "courses": ["CS 401", "CS 402", "CS 410", "CS 420"]
+    }
+  ],
+  "constraints": [
+    "Maximum 18 credits per semester",
+    "Must complete all Core courses",
+    "Must complete at least 3 Major Electives (9 credits)",
+    "Senior Capstone requires completion of CS 301, CS 302, and CS 303",
+    "Minimum 120 total credits for graduation"
+  ]
+}
