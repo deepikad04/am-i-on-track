@@ -33,11 +33,10 @@ services:
       - key: PYTHON_VERSION
         value: "3.12.0"
 
-  # Frontend — React static site
+  # Frontend — React static site (static sites are free by default)
   - type: web
     name: amiontrack
     runtime: static
-    plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
