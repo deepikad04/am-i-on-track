@@ -16,7 +16,7 @@ The system leverages Amazon Nova foundation models across **8 distinct capabilit
 
 What makes it truly agentic: a **self-correction loop** where the Policy Agent detects violations and feeds corrections back to the Simulator for automatic replanning, and a **multi-turn debate** where Fast Track proposes, Safe Path rebuts with specific risks, and a Jury agent synthesizes the optimal plan. All agent reasoning streams to the UI in real time via SSE.
 
-**Live demo:** [https://amiontrack.onrender.com](https://amiontrack.onrender.com) · **Video demo:** *(link your video here)* · **Sample PDF for testing:** included in `samples/` directory
+**Live demo:** [https://amiontrack.onrender.com](https://amiontrack.onrender.com) · **Video demo:** *(https://youtu.be/yWHKh05sp_I)* · **Sample PDF for testing:** included in `samples/` directory
 
 ---
 
@@ -144,3 +144,20 @@ cd frontend && npx vitest run          # 18 tests
 | **Institutional ROI** | At a 20K-student university: ~$3.3M/year in prevented delayed graduations + ~$2M/year in advisor time saved. |
 | **Equity** | First-gen and transfer students lack advising access. A 24/7 AI advisor levels the playing field. |
 | **Privacy** | Processes degree *requirements* (public catalog data), not transcripts. Session-scoped, JWT-authenticated, self-hostable. FERPA-conscious by design. |
+
+---
+
+## Screenshots
+
+### Landing Page — Multi-Agent Architecture
+![Landing Page](Images/Screenshot%202026-03-16%20at%2011.02.37%20AM.png)
+
+### What-If Simulator — Interactive Dependency Graph
+![What-If Simulator](Images/Screenshot%202026-03-16%20at%2011.17.42%20AM.png)
+
+### Impact Report — Degree Completion, Tuition Saved, Risk Level
+![Impact Report](Images/Screenshot%202026-03-16%20at%2011.18.20%20AM.png)
+
+### Overlap Analysis — Cross-Degree Comparison
+![Overlap Analysis](Images/Screenshot%202026-03-16%20at%2011.21.38%20AM.png)
+
