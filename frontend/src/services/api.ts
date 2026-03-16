@@ -209,6 +209,7 @@ export async function getSimulationHistory(sessionId: string): Promise<Simulatio
 export interface DebateResult {
   fast: string;
   safe: string;
+  jury: string;
 }
 
 export async function runDebate(
@@ -228,7 +229,7 @@ export async function runDebate(
   const reader = response.body?.getReader();
   if (!reader) throw new Error('No response body');
   const decoder = new TextDecoder();
-  let result: DebateResult = { fast: '', safe: '' };
+  let result: DebateResult = { fast: '', safe: '', jury: '' };
   let buffer = '';
   while (true) {
     const { done, value } = await reader.read();
@@ -242,7 +243,7 @@ export async function runDebate(
         const parsed = JSON.parse(line.slice(6));
         onEvent?.(parsed);
         if (parsed.data?.fast && parsed.data?.safe) {
-          result = { fast: parsed.data.fast, safe: parsed.data.safe };
+          result = { fast: parsed.data.fast, safe: parsed.data.safe, jury: parsed.data.jury || '' };
         }
       } catch { /* skip */ }
     }

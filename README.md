@@ -8,6 +8,18 @@ An agentic AI academic trajectory simulator — **10 agents**, **self-correction
 
 ---
 
+## Project Summary
+
+**Am I On Track?** is an agentic AI academic trajectory simulator that helps college students predict the cascading impact of course decisions before they commit. Students upload their degree requirements (PDF, screenshot, or screen recording), and a pipeline of 10 specialized AI agents — powered by Amazon Nova via AWS Bedrock — parses the document, builds an interactive dependency graph, and runs what-if simulations (drop a course, add a minor, study abroad, co-op, gap semester).
+
+The system leverages Amazon Nova foundation models across **8 distinct capabilities**: Converse with tool-use for structured output across 5 agents, ConverseStream for real-time token-by-token explanations, Nova Embed for precomputed course similarity vectors, multimodal document/image/video content blocks for flexible input parsing, multi-document comparison for dual-degree overlap analysis, dynamic model routing (Nova Lite for simple tasks, Nova Pro for complex reasoning), cross-session memory for evolving risk assessment, and Bedrock Guardrails for content safety.
+
+What makes it truly agentic: a **self-correction loop** where the Policy Agent detects violations and feeds corrections back to the Simulator for automatic replanning, and a **multi-turn debate** where Fast Track proposes, Safe Path rebuts with specific risks, and a Jury agent synthesizes the optimal plan. All agent reasoning streams to the UI in real time via SSE.
+
+**Live demo:** [https://amiontrack.onrender.com](https://amiontrack.onrender.com) · **Video demo:** *(link your video here)* · **Sample PDF for testing:** included in `samples/` directory
+
+---
+
 ## How It Works
 
 Upload a degree PDF, screenshot, or screen recording. The agent pipeline:
